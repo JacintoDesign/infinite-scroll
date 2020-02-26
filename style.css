@@ -38,3 +38,19 @@ h1 {
 #loader {
     text-align: center;
 }
+
+/* Responsive layout - 3 column */
+@media screen and (max-width: 1200px) {
+    .grid-item { flex: 33.33%; max-width: 33.33%; }
+}
+
+/* Responsive layout - 2 column */
+@media screen and (max-width: 800px) {
+    .grid-item { flex: 50%; max-width: 50%; }
+}
+
+/* Responsive layout - 1 column */
+@media screen and (max-width: 600px) {
+    h1 { font-size: 2rem; }
+    .grid-item { flex: 100%; max-width: 100%; }
+}
