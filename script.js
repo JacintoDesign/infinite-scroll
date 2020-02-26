@@ -1,1 +1,3 @@
-console.log('eat my shorts');
+const grid = document.getElementById('grid');
+const loader = document.getElementById('loader');
+

@@ -1,17 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
 
-* { box-sizing: border-box; }
+/* Font Size: 62.5% makes 1 rem = 10px, instead of the traditional 16px */
+* { box-sizing: border-box; font-size: 62.5%; }
 
 body {
     margin: 0;
     font-family: Bebas Neue, sans-serif;
-    letter-spacing: 5px;
+    letter-spacing: .5rem;
     background-color: whitesmoke;
 }
 
 h1 {
     text-align: center;
-    margin-top: 25px; 
+    margin-top: 2.5rem; 
+    margin-bottom: 1.5rem;
+    font-size: 4rem; 
+}
+
+#grid {
+    display: flex;
+    flex-wrap: wrap; 
+    margin: .25rem;
+}
+
+.grid-item {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 .5rem;
+}
+
+#grid img {
+    width: 100%;
+    vertical-align: middle;
+    margin-top: 1rem;
 }
 
 #loader {
