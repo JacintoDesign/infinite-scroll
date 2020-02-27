@@ -24,14 +24,23 @@ h1 {
 }
 
 #grid img {
-    width: 100%;
-    vertical-align: middle;
     margin-top: 1rem;
-    object-fit: cover;
 }
 
 #loader {
-    text-align: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#loader img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Responsive layout - 3 column */
