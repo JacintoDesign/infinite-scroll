@@ -1,60 +1,69 @@
-@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap");
 
-/* Font Size: 62.5% makes 1 rem = 10px, instead of the traditional 16px */
-* { box-sizing: border-box; font-size: 62.5%; }
+html {
+  box-sizing: border-box;
+}
 
 body {
-    margin: 0;
-    font-family: Bebas Neue, sans-serif;
-    letter-spacing: .5rem;
-    background-color: whitesmoke;
+  margin: 0;
+  font-family: Bebas Neue, sans-serif;
+  letter-spacing: 5px;
+  background: whitesmoke;
 }
 
 h1 {
-    text-align: center;
-    margin-top: 2.5rem; 
-    margin-bottom: 1.5rem;
-    font-size: 4rem; 
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-size: 40px;
 }
 
-#grid {
-    columns: 4;
-    column-gap: 1rem;
-    margin: 1rem;
+/* Image Grid */
+.grid {
+  columns: 3;
+  column-gap: 10px;
+  margin: 10px;
 }
 
-#grid img {
-    margin-top: 1rem;
+.grid a {
+  color: transparent;
 }
 
-#loader {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(255, 255, 255, 0.5);
+.grid img {
+  margin-top: 5px;
 }
 
-#loader img {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* Loader */
+.loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
 }
 
-/* Responsive layout - 3 column */
-@media screen and (max-width: 1200px) {
-    #grid { columns: 3;}
+.loader img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/* Responsive layout - 2 column */
+/* Responsive Grid - 2 column */
 @media screen and (max-width: 800px) {
-    #grid { columns: 2;}
+  .grid {
+    columns: 2;
+  }
 }
 
-/* Responsive layout - 1 column */
+/* Responsive Grid - 1 column */
 @media screen and (max-width: 600px) {
-    h1 { font-size: 2rem; }
-    #grid { columns: 1;}
+  h1 {
+    font-size: 20px;
+  }
+
+  .grid {
+    columns: 1;
+  }
 }
