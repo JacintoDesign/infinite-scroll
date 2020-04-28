@@ -20,13 +20,9 @@ h1 {
 
 /* Image Grid */
 .grid {
-  columns: 3;
+  columns: 1;
   column-gap: 10px;
-  margin: 10px;
-}
-
-.grid a {
-  color: transparent;
+  margin: 10px 30%;
 }
 
 .grid img {
@@ -40,7 +36,7 @@ h1 {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .loader img {
@@ -50,20 +46,13 @@ h1 {
   transform: translate(-50%, -50%);
 }
 
-/* Responsive Grid - 2 column */
-@media screen and (max-width: 800px) {
-  .grid {
-    columns: 2;
-  }
-}
-
-/* Responsive Grid - 1 column */
+/* Media Query: Large Smartphone Vertical */
 @media screen and (max-width: 600px) {
   h1 {
     font-size: 20px;
   }
 
   .grid {
-    columns: 1;
+    margin: 10px;
   }
 }
