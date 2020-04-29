@@ -1,5 +1,6 @@
 const grid = document.getElementById('grid');
 const loader = document.getElementById('loader');
+import { config } from './config.js';
 
 let ready = false;
 let imagesLoaded = 0;
