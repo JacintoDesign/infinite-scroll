@@ -18,14 +18,14 @@ h1 {
   font-size: 40px;
 }
 
-/* Image Grid */
-.grid {
+/* Image Container */
+.image-container {
   columns: 1;
   column-gap: 10px;
   margin: 10px 30%;
 }
 
-.grid img {
+.image-container img {
   margin-top: 5px;
 }
 
@@ -52,7 +52,7 @@ h1 {
     font-size: 20px;
   }
 
-  .grid {
+  .image-container {
     margin: 10px;
   }
 }
