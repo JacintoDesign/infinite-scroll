@@ -23,7 +23,7 @@ function imageLoaded() {
 
 // Helper Function to Set Attributes on DOM Elements
 function setAttributes(element, attributes) {
-  for (let key in attributes) {
+  for (const key in attributes) {
     element.setAttribute(key, attributes[key]);
   }
 }
@@ -37,17 +37,17 @@ function displayPhotos() {
     // Create <a> to link to full photo
     const item = document.createElement('a');
     setAttributes(item, {
-      'href': imagesArray[i].links.download,
-      'target': '_blank'
+      href: imagesArray[i].links.download,
+      target: '_blank',
     });
     // Create <img> for photo
     const img = document.createElement('img');
     setAttributes(img, {
-      'src': imagesArray[i].urls.regular, 
-      'alt': imagesArray[i].alt_description,
-      'title': imagesArray[i].alt_description,
-      'width': '100%',
-      'height': '100%',
+      src: imagesArray[i].urls.regular,
+      alt: imagesArray[i].alt_description,
+      title: imagesArray[i].alt_description,
+      width: '100%',
+      height: '100%',
     });
     // Event Listener, check when each is finished loading
     img.addEventListener('load', imageLoaded);
