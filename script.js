@@ -33,28 +33,26 @@ function displayPhotos() {
   imagesLoaded = 0;
   totalImages = imagesArray.length;
   // console.log(totalImages);
-  for (let i = 0; i < imagesArray.length; i++) {
-    // Create <a> to link to full photo
+  // Create <a> to link to full photo
+  imagesArray.forEach((image) => {
     const item = document.createElement('a');
     setAttributes(item, {
-      href: imagesArray[i].links.download,
+      href: image.links.download,
       target: '_blank',
     });
     // Create <img> for photo
     const img = document.createElement('img');
     setAttributes(img, {
-      src: imagesArray[i].urls.regular,
-      alt: imagesArray[i].alt_description,
-      title: imagesArray[i].alt_description,
-      width: '100%',
-      height: '100%',
+      src: image.urls.regular,
+      alt: image.alt_description,
+      title: image.alt_description,
     });
     // Event Listener, check when each is finished loading
     img.addEventListener('load', imageLoaded);
     // Put <img> inside <a>, then put both inside imageContainer Element
     item.appendChild(img);
     imageContainer.appendChild(item);
-  }
+  });
 }
 
 // Get photos from Unsplash API
@@ -63,10 +61,9 @@ async function getPhotos() {
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
-    for (let i = 0; i < data.length; i++) {
-      const image = data[i];
+    data.forEach((image) => {
       imagesArray.push(image);
-    }
+    });
     // console.log(imagesArray);
     displayPhotos();
   } catch (error) {

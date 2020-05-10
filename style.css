@@ -7,7 +7,6 @@ html {
 body {
   margin: 0;
   font-family: Bebas Neue, sans-serif;
-  letter-spacing: 5px;
   background: whitesmoke;
 }
 
@@ -16,17 +15,7 @@ h1 {
   margin-top: 25px;
   margin-bottom: 15px;
   font-size: 40px;
-}
-
-/* Image Container */
-.image-container {
-  columns: 1;
-  column-gap: 10px;
-  margin: 10px 30%;
-}
-
-.image-container img {
-  margin-top: 5px;
+  letter-spacing: 5px;
 }
 
 /* Loader */
@@ -44,6 +33,16 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* Image Container */
+.image-container {
+  margin: 10px 30%;
+}
+
+.image-container img {
+  width: 100%;
+  margin-top: 5px;
 }
 
 /* Media Query: Large Smartphone Vertical */
