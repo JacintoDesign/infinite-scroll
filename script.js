@@ -4,7 +4,7 @@ const loader = document.getElementById('loader');
 let ready = false;
 let imagesLoaded = 0;
 let totalImages = 0;
-let imagesArray = [];
+let photosArray = [];
 
 // Unsplash API
 const count = 30;
@@ -15,7 +15,6 @@ const apiUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count
 function imageLoaded() {
   imagesLoaded++;
   if (imagesLoaded === totalImages) {
-    // console.log('all images loaded');
     ready = true;
     loader.hidden = true;
   }
@@ -28,24 +27,24 @@ function setAttributes(element, attributes) {
   }
 }
 
-// Create Elements For Links & Images, Add to DOM
+// Create Elements For Links & Photos, Add to DOM
 function displayPhotos() {
   imagesLoaded = 0;
-  totalImages = imagesArray.length;
-  // console.log(totalImages);
-  // Create <a> to link to full photo
-  imagesArray.forEach((image) => {
+  totalImages = photosArray.length;
+  // Run function for each object in photosArray
+  photosArray.forEach((photo) => {
+    // Create <a> to link to full photo
     const item = document.createElement('a');
     setAttributes(item, {
-      href: image.links.download,
+      href: photo.links.html,
       target: '_blank',
     });
     // Create <img> for photo
     const img = document.createElement('img');
     setAttributes(img, {
-      src: image.urls.regular,
-      alt: image.alt_description,
-      title: image.alt_description,
+      src: photo.urls.regular,
+      alt: photo.alt_description,
+      title: photo.alt_description,
     });
     // Event Listener, check when each is finished loading
     img.addEventListener('load', imageLoaded);
@@ -57,14 +56,9 @@ function displayPhotos() {
 
 // Get photos from Unsplash API
 async function getPhotos() {
-  imagesArray = [];
   try {
     const response = await fetch(apiUrl);
-    const data = await response.json();
-    data.forEach((image) => {
-      imagesArray.push(image);
-    });
-    // console.log(imagesArray);
+    photosArray = await response.json();
     displayPhotos();
   } catch (error) {
     // Catch Error Here
